@@ -1,0 +1,264 @@
+/* =======================================================
+   1. VARIÁVEIS E RESET GLOBAL
+========================================================== */
+
+/* Define as variáveis de cores para fácil manutenção e acessibilidade */
+:root {
+    --cor-primaria: #003366;    /* Azul Institucional */
+    --cor-secundaria: #FFC300;  /* Destaque (Amarelo) */
+    --cor-fundo: #F4F4F4;      /* Fundo claro para limpeza */
+    --cor-texto: #333333;      /* Texto principal para contraste adequado */
+    --cor-branco: #FFFFFF;
+    --max-largura: 1200px;
+    --padding-secao: 40px 20px;
+}
+
+/* Importa uma fonte legível do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset Básico para garantir a consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte legível */
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Container para centralizar o conteúdo em telas grandes */
+.container {
+    max-width: var(--max-largura);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =======================================================
+   2. ESTILIZAÇÃO DE ACESSIBILIDADE E TIPOGRAFIA
+========================================================== */
+
+h1, h2, h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--cor-secundaria); /* Feedback visual ao usuário */
+}
+
+/* Estilo para as seções de conteúdo */
+.secao-padrao {
+    padding: var(--padding-secao);
+    margin-bottom: 20px;
+    background-color: var(--cor-branco);
+    border-radius: 8px; /* Borda leve para layout limpo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* =======================================================
+   3. CABEÇALHO (Mobile First)
+========================================================== */
+
+#cabecalho {
+    background-color: var(--cor-primaria);
+    padding: 10px 0;
+    position: sticky; /* Mantém o menu visível ao rolar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cabecalho .container {
+    display: flex;
+    justify-content: space-between; /* Alinha logo e menu nas pontas */
+    align-items: center;
+}
+
+#cabecalho img {
+    height: 50px; /* Tamanho do logo para celular */
+    max-width: 150px;
+}
+
+/* O Menu de Navegação Principal (escondido por padrão no mobile) */
+#menu-principal {
+    display: none; /* Esconde o menu de texto no mobile */
+}
+
+/* O botão do menu hamburguer (visível no mobile) */
+.menu-mobile-btn {
+    background: none;
+    border: none;
+    color: var(--cor-branco);
+    font-size: 1.8em;
+    cursor: pointer;
+    display: block; 
+}
+
+/* =======================================================
+   4. RODAPÉ (Footers)
+========================================================== */
+
+#rodape {
+    background-color: var(--cor-texto); /* Cor escura para forte contraste */
+    color: var(--cor-fundo);
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+#rodape .container {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna no mobile */
+    gap: 20px;
+    text-align: center;
+}
+
+#rodape .copy p {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =======================================================
+   5. MEDIA QUERY (Transição para Tablet e Desktop)
+========================================================== */
+
+@media (min-width: 768px) {
+    
+    /* CABEÇALHO: Exibe o menu principal e esconde o botão mobile */
+    #menu-principal {
+        display: block; /* Mostra o menu na horizontal */
+    }
+
+    #menu-principal ul {
+        list-style: none;
+        display: flex;
+    }
+
+    #menu-principal li a {
+        color: var(--cor-branco);
+        padding: 15px;
+        display: block;
+    }
+    
+    .menu-mobile-btn {
+        display: none; /* Esconde o botão hamburguer */
+    }
+
+    /* RODAPÉ: Alinha os itens lado a lado em telas maiores */
+    #rodape .container {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    /* ... (Estilos do Cabeçalho e Rodapé aqui) ... */
+
+    /* M.V.V.: Deixa os 3 cards lado a lado no desktop */
+    .m-v-v-cards {
+        flex-direction: row;
+    }
+    
+    /* Equipe e Estrutura: Mostra 2 a 3 colunas lado a lado */
+    .lista-equipe {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .galeria-estrutura {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* =======================================================
+   6. ESTILOS DA SEÇÃO INSTITUCIONAL (#institucional)
+========================================================== */
+
+/* --- 6.1 Missão, Visão e Valores (M.V.V.) --- */
+
+.historia-valores {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Garante o layout de cards: empilhados no mobile, lado a lado no desktop */
+.m-v-v-cards {
+    display: flex;
+    flex-direction: column; /* Padrão: empilha no mobile */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-top: 20px;
+}
+
+.m-v-v-cards .card {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 5px solid var(--cor-secundaria); /* Linha de destaque */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.m-v-v-cards .card h4 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(0, 51, 102, 0.1);
+    padding-bottom: 5px;
+}
+
+/* --- 6.2 Equipe e Estrutura (Lista de Cards) --- */
+
+.equipe,
+.estrutura-fisica {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Usa Grid para criar um layout de galeria que se adapta */
+.lista-equipe,
+.galeria-estrutura {
+    display: grid;
+    /* Padrão Mobile First: 1 coluna */
+    grid-template-columns: 1fr; 
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.membro,
+.item-estrutura {
+    background-color: var(--cor-branco);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+[cite_start]/* Estilo para as fotos da equipe (Equipe Pedagógica e Administrativa [cite: 25]) */
+.membro img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50%; /* Foto redonda para perfil */
+    margin-bottom: 10px;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.item-estrutura img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
