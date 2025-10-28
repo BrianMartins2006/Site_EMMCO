@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     
     <meta name="description" content="Centralização e divulgação de informações institucionais, projetos e calendário escolar da EMMCO.">
+    <script src="js/script.js" defer></script> 
+    <script src="js/api.js" defer></script> 
 </head>
 <body>
 
@@ -29,84 +31,106 @@
     </header>
 
     <main>
-        <section id="institucional" class="secao-padrao">
-            <h2>Nossa História e Valores</h2>
-
-            <div class="historia-valores">
-                <h3>Um Breve Olhar Sobre a Escola Municipal Maria Caproni De Oliveira</h3>
-                <p>Aqui deve entrar um parágrafo que resume a história da escola e sua tradição[cite: 24].</p>
-                
-                <div class="m-v-v-cards">
-                    <div class="card">
-                        <h4>Missão</h4>
-                        <p>Descrição da missão da escola[cite: 24].</p>
-                    </div>
-                    <div class="card">
-                        <h4>Visão</h4>
-                        <p>Descrição da visão da escola[cite: 24].</p>
-                    </div>
-                    <div class="card">
-                        <h4>Valores</h4>
-                        <p>Lista ou descrição dos valores que guiam a instituição[cite: 24].</p>
-
-                    <div class="equipe">
-                <h3>Nossa Equipe</h3>
-                <p>Conheça os profissionais que fazem a excelência pedagógica e administrativa da EMMCO acontecer.</p>
-                
-                <div class="lista-equipe">
-                    <div class="membro">
-                        <img src="assets/img/equipe/nome_diretor.jpg" alt="Foto do Diretor(a)">
-                        <h4>Nome Completo</h4>
-                        <p>Diretor(a) </p>
-                    </div>
-                    <div class="membro">
-                        <img src="assets/img/equipe/nome_coord.jpg" alt="Foto do Coordenador(a)">
-                        <h4>Nome Completo</h4>
-                        <p>Coordenador(a) Pedagógico(a) </p>
-                    </div>
-                    </div>
-            </div>
-                    <div class="estrutura-fisica">
-                <h3>Estrutura e Instalações</h3>
-                <div class="galeria-estrutura">
-                    <div class="item-estrutura">
-                        <img src="assets/img/estrutura/laboratorio.jpg" alt="Foto do laboratório">
-                        <h4>Laboratórios Modernos [cite: 26]</h4>
-                    </div>
-                    <div class="item-estrutura">
-                        <img src="assets/img/estrutura/biblioteca.jpg" alt="Foto da biblioteca">
-                        <h4>Biblioteca e Espaço de Leitura [cite: 26]</h4>
-                    </div>
-                    <div class="item-estrutura">
-                        <img src="assets/img/estrutura/quadra.jpg" alt="Foto da quadra">
-                        <h4>Quadras Poliesportivas [cite: 26]</h4>
-                    </div>
-                    </div>
-            </div>
-                    </div>
-                </div>
-            </div>
-
-            </section>
-
-        <section id="comunicados" class="secao-padrao">
-            <h2>Avisos e Comunicados</h2>
-            <div id="lista-comunicados" class="conteudo-dinamico">
-                <p>Carregando comunicados...</p>
-            </div>
-        </section>
-
-        <section id="calendario" class="secao-padrao">
-            <h2>Calendário Escolar</h2>
-            <div id="tabela-calendario" class="conteudo-dinamico">
-                </div>
-        </section>
-
-        <section id="pedagogico" class="secao-padrao">
-            <h2>Projetos e Suporte Pedagógico</h2>
-            </section>
         
-    </main>
+        <section id="hero-banner">
+            <div class="container">
+                <h1>Bem-vindo à Escola Municipal EMMCO</h1>
+                <p>Centralizando informações, projetos e o calendário escolar para alunos, pais e professores.</p>
+                <a href="#comunicados" class="btn-cta">Ver Comunicados de Hoje</a>
+            </div>
+        </section>
+        
+        <div class="container main-content-area">
+            
+            <section id="institucional" class="secao-padrao">
+                <h2>Nossa História e Valores</h2>
+
+                <div class="historia-valores">
+                    <h3>Um Breve Olhar Sobre a Escola Municipal Maria Caproni De Oliveira</h3>
+                    
+                    <div class="m-v-v-cards">
+                        <div class="card">
+                            <h4>Missão</h4>
+                            <p>Promover uma educação pública de qualidade, inclusiva e transformadora, que valorize o conhecimento, 
+                                o respeito e a cidadania. Nossa missão é formar alunos críticos, criativos e preparados para os desafios da vida,
+                                contribuindo para o desenvolvimento humano e social da comunidade.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Visão</h4>
+                            <p>Ser uma escola referência em educação municipal, reconhecida pelo compromisso com a aprendizagem significativa, 
+                                pela integração entre escola,família e comunidade, e pela formação de cidadãos conscientes, solidários e participativos.</p>
+                        </div>
+                        <div class="card">
+                            <h4>Valores</h4>
+                            <ul>
+                            <li><strong>Respeito:</strong> valorizamos as diferenças e promovemos a convivência harmoniosa.</li>
+                            <li><strong>Responsabilidade:</strong> assumimos compromisso com o aprendizado e o bem comum.</li>
+                            <li><strong>Inclusão:</strong> acreditamos que todos têm direito à educação de qualidade.</li>
+                            <li><strong>Colaboração:</strong> incentivamos o trabalho em equipe e o diálogo.</li>
+                            <li><strong>Inovação:</strong> buscamos constantemente novas formas de ensinar e aprender.</li>
+                            <li><strong>Cidadania:</strong> formamos pessoas que contribuem para uma sociedade mais justa e solidária.</li>
+                            </ul>
+                        </div> 
+                    </div> </div> <div class="equipe">
+                    <h3>Nossa Equipe</h3>
+                    <p>Conheça os profissionais que fazem a excelência pedagógica e administrativa da EMMCO acontecer.</p>
+                    
+                    <div class="lista-equipe">
+                        <div class="membro">
+                            <img src="assets/diretora.jpg" alt="Foto do Diretor(a)">
+                            <h4>Edna Ananias</h4>
+                            <p>Diretor(a)</p>
+                        </div>
+                        <div class="membro">
+                            <img src="assets/img/equipe/nome_coord.jpg" alt="Foto do Coordenador(a)">
+                            <h4>Nome Completo</h4>
+                            <p>Coordenador(a) Pedagógico(a)</p>
+                        </div>
+                        </div> </div> <div class="estrutura-fisica">
+                    <h3>Estrutura e Instalações</h3>
+                    <div class="galeria-estrutura">
+                        <div class="item-estrutura">
+                            <img src="assets/img/estrutura/laboratorio.jpg" alt="Foto do laboratório">
+                            <h4>Laboratórios Modernos</h4>
+                        </div>
+                        <div class="item-estrutura">
+                            <img src="assets/img/estrutura/biblioteca.jpg" alt="Foto da biblioteca">
+                            <h4>Biblioteca e Espaço de Leitura</h4>
+                        </div>
+                        <div class="item-estrutura">
+                            <img src="assets/img/estrutura/quadra.jpg" alt="Foto da quadra">
+                            <h4>Quadras Poliesportivas</h4>
+                        </div>
+                         </div>
+                        <div class="item-estrutura">
+                            <img src="assets/Fotadaescola.png" alt="Foto da escola">
+                            <h4>Instalações</h4>
+                        </div>
+                        </div> </div> </section> <section id="comsunicados" class="secao-padrao">
+                <h2>Avisos e Comunicados</h2>
+                <div id="lista-comunicados" class="grid-cards conteudo-dinamico">
+                    <div class="loading-message"><p>Carregando comunicados...</p></div>
+                </div>
+            </section>
+
+            <section id="calendario" class="secao-padrao">
+                <h2>Calendário Escolar</h2>
+                <div id="tabela-calendario" class="conteudo-dinamico">
+                    <div class="loading-message"><p>Carregando calendário...</p></div>
+                </div>
+            </section>
+
+            <section id="pedagogico" class="secao-padrao">
+                <h2>Projetos e Suporte Pedagógico</h2>
+                <p>Informações sobre projetos em andamento, links úteis para apoio pedagógico e materiais didáticos.</p>
+            </section>
+
+            <section id="contato" class="secao-padrao">
+                <h2>Fale Conosco</h2>
+                <p>Detalhes de contato da escola, horário de funcionamento e formulário de contato (a ser implementado).</p>
+            </section>
+            
+        </div> </main>
 
     <footer id="rodape">
         <div class="container">
@@ -115,12 +139,10 @@
             <div class="integracoes">
                 </div>
             <div class="copy">
-                <p>Layout limpo e organizado | Acessibilidade e Inclusão [cite: 39, 40]</p>
+                <p>&copy; 2025 EMMCO. Layout limpo e organizado | Acessibilidade e Inclusão</p>
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
     
 </body>
 </html>
