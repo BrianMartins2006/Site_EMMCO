@@ -10,8 +10,11 @@
     <meta name="description" content="Centralização e divulgação de informações institucionais, projetos e calendário escolar da EMMCO.">
     <script src="js/script.js" defer></script> 
     <script src="js/api.js" defer></script> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
 
     <header id="cabecalho">
         <div class="container">
@@ -106,7 +109,7 @@
                             <img src="assets/Fotadaescola.png" alt="Foto da escola">
                             <h4>Instalações</h4>
                         </div>
-                        </div> </div> </section> <section id="comsunicados" class="secao-padrao">
+                        </div> </div> </section> <section id="comunicados" class="secao-padrao">
                 <h2>Avisos e Comunicados</h2>
                 <div id="lista-comunicados" class="grid-cards conteudo-dinamico">
                     <div class="loading-message"><p>Carregando comunicados...</p></div>
@@ -127,7 +130,32 @@
 
             <section id="contato" class="secao-padrao">
                 <h2>Fale Conosco</h2>
-                <p>Detalhes de contato da escola, horário de funcionamento e formulário de contato (a ser implementado).</p>
+                <p class="contato-intro">Nossa equipe está disponível para tirar suas dúvidas. Você pode nos contatar por telefone, e-mail ou visitando nossa unidade.</p>
+
+                <div class="info-contato-grid">
+                    <div class="contato-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Telefones</h4>
+                        <p>(XX) XXXX-XXXX</p>
+                        <p>(XX) XXXX-XXXX</p>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>E-mail</h4>
+                        <p>contato@emmco.edu.br</p>
+                        <p>secretaria@emmco.edu.br</p>
+                    </div>
+                    <div class="contato-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>Horário de Funcionamento</h4>
+                        <p>Segunda a Sexta: 7h às 17h</p>
+                    </div>
+                </div>
+                
+                <div class="localizacao-mapa">
+                    <h3>Nossa Localização</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15000.902602758117!2d-43.955529!3d-19.920958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHOMjknNDEuOCJTIDQzwrU1NSczNC4wIlc!5e0!3m2!1sen!2sbr!4v1600000000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </section>
             
         </div> </main>
@@ -135,11 +163,22 @@
     <footer id="rodape">
         <div class="container">
             <div class="contato-info">
-                </div>
+                <h4>EMMCO</h4>
+                <p>Endereço Completo da Escola</p>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+                <p>E-mail: contato@emmco.edu.br</p>
+            </div>
             <div class="integracoes">
+                <h4>Conecte-se</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
+            </div>
             <div class="copy">
-                <p>&copy; 2025 EMMCO. Layout limpo e organizado | Acessibilidade e Inclusão</p>
+                <p>© 2025 EMMCO. Todos os direitos reservados.</p>
+                <p>Layout limpo e organizado | Acessibilidade e Inclusão</p>
             </div>
         </div>
     </footer>
