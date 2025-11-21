@@ -1,38 +1,30 @@
-// Arquivo: js/api.js
+const SPREADSHEET_ID = '1lN0C99B04RzDmhNIprHMGLk64IQRS76uw8gwaSVdqtk'; 
+const API_KEY = 'AIzaSyDCw73o0pdFmqjlUGMq8y6wMaktG0Cavs8'; 
 
-// --- 1. VARIÁVEIS CRÍTICAS (APENAS LEITURA PÚBLICA) ---
-const SPREADSHEET_ID = '1lN0C99B04RzDmhNIprHMGLk64IQRS76uw8gwaSVdqtk'; // SEU ID DA PLANILHA
-const API_KEY = 'AIzaSyDCw73o0pdFmqjlUGMq8y6wMaktG0Cavs8'; // NOVO: Chave gerada no Google Cloud
-
-// Flag para garantir a inicialização
 let gapiInitialized = false;
 
-// 1. Chamado pelo 'onload' do gapi.js no HTML
+
 function gapiLoaded() {
   gapi.load('client', initializeGapiClient);
 }
 
-// 2. Inicializa o cliente da API com a chave pública
 async function initializeGapiClient() {
   try {
     await gapi.client.init({
-      apiKey: API_KEY, // USA A CHAVE DE API PÚBLICA
+      apiKey: API_KEY,
       discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
     });
     gapiInitialized = true;
     console.log('Google API Client inicializado com Chave Pública.');
     
-    // CHAMA A BUSCA DE DADOS IMEDIATAMENTE APÓS A INICIALIZAÇÃO
     fetchDataAndRender(); 
     
   } catch (err) {
     console.error("Erro na inicialização da GAPI. Verifique a API Key e as restrições.", err);
-    // Adiciona uma mensagem de erro visível na tela, se a conexão falhar
     document.getElementById('lista-comunicados').innerHTML = '<div class="loading-message"><p>Erro crítico ao conectar aos dados. Tente mais tarde.</p></div>';
   }
 }
 
-// Função principal que chama as buscas de dados
 async function fetchDataAndRender() {
     if (!gapiInitialized) {
         console.warn("GAPI não inicializada. Tentando novamente.");
@@ -43,7 +35,6 @@ async function fetchDataAndRender() {
     fetchCalendario(); 
 }
 
-// --- FUNÇÕES DE BUSCA (PERMANECEM AS MESMAS) ---
 
 async function fetchComunicados() {
     const range = 'Comunicados!A2:E';
