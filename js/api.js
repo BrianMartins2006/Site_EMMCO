@@ -4,7 +4,7 @@ const API_KEY = 'AIzaSyDCw73o0pdFmqjlUGMq8y6wMaktG0Cavs8';
 window.gapiInitialized = false;
 
 
-function gapiLoaded() {
+window.gapiLoaded = function() {
   gapi.load('client', initializeGapiClient);
 }
 
