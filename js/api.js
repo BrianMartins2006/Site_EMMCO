@@ -1,7 +1,7 @@
 const SPREADSHEET_ID = '1lN0C99B04RzDmhNIprHMGLk64IQRS76uw8gwaSVdqtk'; 
 const API_KEY = 'AIzaSyDCw73o0pdFmqjlUGMq8y6wMaktG0Cavs8'; 
 
-let gapiInitialized = false;
+window.gapiInitialized = false;
 
 
 function gapiLoaded() {
@@ -17,7 +17,6 @@ async function initializeGapiClient() {
     gapiInitialized = true;
     console.log('Google API Client inicializado com Chave Pública.');
     
-    fetchDataAndRender(); 
     
   } catch (err) {
     console.error("Erro na inicialização da GAPI. Verifique a API Key e as restrições.", err);

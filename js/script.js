@@ -112,5 +112,22 @@ function renderCalendario(data) {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Site EMMCO carregado!');
-    // A chamada fetchDataAndRender é feita pelo api.js após a autenticação
+    
+   const checkAndFetch = () => {
+        if (typeof fetchDataAndRender === 'function' && window.gapiInitialized === true) {
+            console.log('GAPI carregado. Iniciando busca de dados...');
+            fetchDataAndRender();
+        } else {
+            console.warn('GAPI não pronta. Tentando novamente...');
+            if (window.retryCount === undefined) window.retryCount = 0;
+            if (window.retryCount < 15) { 
+                window.retryCount++;
+                setTimeout(checkAndFetch, 200);
+            } else {
+                 console.error('Falha ao inicializar GAPI após 15 tentativas. Verifique a conexão.');
+            }
+        }
+    };
+
+    setTimeout(checkAndFetch, 20); 
 });
