@@ -309,10 +309,17 @@ a:hover {
 
 .galeria-estrutura .item-estrutura:hover {
     background-color: #004488; 
+    
 }
 
 .galeria-estrutura .item-estrutura img {
-    display: none; 
+    width: 100%;
+    height: auto;
+    font-size: 1.2em;
+    max-height: 150px; 
+    object-fit: cover;
+    margin-bottom: 8px;
+    display: flex;
 }
 
 .galeria-estrutura .item-estrutura h4 {
@@ -382,10 +389,9 @@ a:hover {
 /* =======================================================
    7. RODAPÉ
 ========================================================== */
-
 #rodape {
     background-color: var(--cor-texto); 
-    color: var(--cor-fundo);
+    color: var(--cor-fundo); 
     padding: 30px 0;
     font-size: 0.9em;
 }
@@ -393,14 +399,38 @@ a:hover {
 #rodape .container {
     display: flex;
     flex-direction: column; 
-    gap: 20px;
+    gap: 25px; 
     text-align: center;
 }
 
-#rodape .copy p {
-    margin-top: 15px;
+#rodape h4 {
+    color: var(--cor-secundaria); 
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: var(--cor-branco); 
+    font-size: 1.8em; 
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--cor-secundaria);
+}
+
+.copy {
     padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 /* =======================================================
@@ -524,5 +554,38 @@ a:hover {
         text-align: left;
         font-weight: bold;
         color: var(--cor-primaria);
+    }
+}
+
+/* =======================================================
+   ESTILIZAÇÃO DO MAPA
+========================================================== */
+
+.localizacao-mapa {
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    padding: 0 5px; 
+}
+
+.localizacao-mapa h3 {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.localizacao-mapa iframe {
+    width: 100%; 
+    height: 400px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: block; 
+}
+
+@media (max-width: 600px) {
+    .localizacao-mapa {
+        margin-top: 25px;
+    }
+    .localizacao-mapa iframe {
+        height: 300px; 
     }
 }
