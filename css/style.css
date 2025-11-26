@@ -589,3 +589,49 @@ a:hover {
         height: 300px; 
     }
 }
+
+/* =======================================================
+   ESTILO DA SEÇÃO APOIO PEDAGÓGICO (#pedagogico)
+========================================================== */
+
+.pedagogico-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.bloco-recursos {
+    background-color: var(--cor-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-primaria); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bloco-recursos h3 {
+    color: var(--cor-secundaria); 
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 195, 0, 0.4);
+    padding-bottom: 10px;
+}
+
+.bloco-recursos ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bloco-recursos li {
+    margin-bottom: 8px;
+}
+
+.bloco-recursos li a {
+    color: var(--cor-primaria);
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .pedagogico-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
