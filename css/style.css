@@ -16,7 +16,6 @@
 /* Importa uma fonte legível (Roboto) do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Reset Básico para garantir a consistência */
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +36,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+ 
 
 /* =======================================================
    2. ESTILIZAÇÃO DE ACESSIBILIDADE E TIPOGRAFIA
@@ -390,7 +390,7 @@ a:hover {
    7. RODAPÉ
 ========================================================== */
 #rodape {
-    background-color: var(--cor-texto); 
+    background-color:#003366; 
     color: var(--cor-fundo); 
     padding: 30px 0;
     font-size: 0.9em;
